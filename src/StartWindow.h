@@ -1,7 +1,7 @@
 #include <time.h>
 #include <stdlib.h>
 #pragma once
-namespace Крестикинолики {
+namespace TicTac{
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -124,30 +124,16 @@ namespace Крестикинолики {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button6;
-
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button9;
-
-
-
 	private: System::Windows::Forms::Button^ button8;
 	private: System::Windows::Forms::Button^ button7;
 
 
-		   bool turnX = true;
-	protected:
+	private: bool turnX = true;
 
-
-	protected:
-
-	protected:
-
-	private:
-		/// <summary>
-		/// Обязательная переменная конструктора.
-		/// </summary>
-		System::ComponentModel::Container^ components;
+	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -156,7 +142,6 @@ namespace Крестикинолики {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(StartWindow::typeid));
 			this->buttonExit = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -207,7 +192,7 @@ namespace Крестикинолики {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L" ";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &StartWindow::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button2
 			// 
@@ -219,7 +204,7 @@ namespace Крестикинолики {
 			this->button2->TabIndex = 4;
 			this->button2->Text = L" ";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &StartWindow::button2_Click);
+			this->button2->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button3
 			// 
@@ -231,7 +216,7 @@ namespace Крестикинолики {
 			this->button3->TabIndex = 5;
 			this->button3->Text = L" ";
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &StartWindow::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button6
 			// 
@@ -243,7 +228,7 @@ namespace Крестикинолики {
 			this->button6->TabIndex = 8;
 			this->button6->Text = L" ";
 			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &StartWindow::button6_Click);
+			this->button6->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button5
 			// 
@@ -255,7 +240,7 @@ namespace Крестикинолики {
 			this->button5->TabIndex = 7;
 			this->button5->Text = L" ";
 			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &StartWindow::button5_Click);
+			this->button5->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button4
 			// 
@@ -267,7 +252,7 @@ namespace Крестикинолики {
 			this->button4->TabIndex = 6;
 			this->button4->Text = L" ";
 			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &StartWindow::button4_Click);
+			this->button4->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button9
 			// 
@@ -279,7 +264,7 @@ namespace Крестикинолики {
 			this->button9->TabIndex = 11;
 			this->button9->Text = L" ";
 			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &StartWindow::button9_Click);
+			this->button9->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button8
 			// 
@@ -291,7 +276,7 @@ namespace Крестикинолики {
 			this->button8->TabIndex = 10;
 			this->button8->Text = L" ";
 			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &StartWindow::button8_Click);
+			this->button8->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// button7
 			// 
@@ -303,14 +288,13 @@ namespace Крестикинолики {
 			this->button7->TabIndex = 9;
 			this->button7->Text = L" ";
 			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &StartWindow::button7_Click);
+			this->button7->Click += gcnew System::EventHandler(this, &StartWindow::button_Click);
 			// 
 			// StartWindow
 			// 
 			this->AccessibleRole = System::Windows::Forms::AccessibleRole::None;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(700, 800);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button8);
@@ -327,7 +311,6 @@ namespace Крестикинолики {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"StartWindow";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
@@ -340,32 +323,9 @@ namespace Крестикинолики {
 	private: System::Void buttonExit_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button1);
-	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button2);
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button3);
-	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button4);
-	}
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button5);
-	}
-	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button6);
-	}
-	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button7);
-	}
-	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button8);
-	}
-	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-		turn(button9);
+	private: System::Void button_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		turn(safe_cast<Button^>(sender));
 	}
 		   void turn(System::Windows::Forms::Button^ button) {
 

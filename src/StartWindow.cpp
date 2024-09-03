@@ -1,7 +1,6 @@
 #include "StartWindow.h"
-#include <Windows.h>
 #include <time.h>
-bool buf = FreeConsole();//Закрываем консоль, чтобы не мешала
+#include <stdlib.h>
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -11,6 +10,6 @@ int main(array<String^>^ args) {
 	srand(time(NULL));
 	Application::SetCompatibleTextRenderingDefault(false);//Необходима для коректрой обработки текста
 	Application::EnableVisualStyles();//Подключаем различные визуальные стили
-	Крестикинолики::StartWindow form;
+	TicTac::StartWindow form;
 	Application::Run(% form);
 }
